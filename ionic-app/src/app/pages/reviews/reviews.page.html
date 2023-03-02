@@ -14,8 +14,7 @@
     <ion-item 
       *ngFor="let review of reviews; let i = index" 
       [attr.data-index]="i"
-      class="review" 
-      (click)="editReview(review)">
+      class="review">
       
       <ion-grid>
         <ion-row>
@@ -29,8 +28,8 @@
           </ion-col>
 
           <ion-col size="8" class="review-info">
-            <ion-title class="review-book-title">{{review.book?.name}}</ion-title>
-            <p class="description">{{review.description}}</p>
+            <ion-title class="review-book-title" (click)="viewBook(review)">{{review.book?.name}}</ion-title>
+            <p class="description" (click)="editReview(review)">{{review.description}}</p>
             <div class="extra">
               <div class="author">
                 <ion-icon name="person-circle-outline"></ion-icon>
@@ -52,6 +51,12 @@
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button (click)="addNewReview()">
       <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+    <ion-fab-button (click)="viewBooks()">
+      <ion-icon name="chevron-forward-circle"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 

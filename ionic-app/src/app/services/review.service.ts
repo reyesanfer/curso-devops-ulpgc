@@ -1,9 +1,8 @@
+import { apiConection } from './../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Review } from '../model/review';
-import { environment } from '../../environments/environment';
-
 
 @Injectable({
   providedIn: 'root'
@@ -25,12 +24,12 @@ export class ReviewService {
     params = params.append('sortDir', 'desc');
     params = params.append('sort', 'id');
 
-    return this.http.get<Review[]>(environment.urlAPI + '/reviews', { params });
+    return this.http.get<Review[]>(apiConection.url + '/reviews', { params });
   }
 
   createReview(review: Review) {
     return new Promise(resolve => {
-      this.http.post(environment.urlAPI + '/reviews', review)
+      this.http.post(apiConection.url + '/reviews', review)
         .subscribe((response: Review) => {
           this.newReview.emit(response);
           resolve(true);
@@ -39,12 +38,12 @@ export class ReviewService {
   }
 
   updateReview(review: Review) {
-    return this.http.put(environment.urlAPI + '/reviews/' + review.id, review);
+    return this.http.put(apiConection.url + '/reviews/' + review.id, review);
   }
 
   deleteReview(reviewId: number) {
     return new Promise(resolve => {
-      return this.http.delete(environment.urlAPI + '/reviews/' + reviewId)
+      return this.http.delete(apiConection.url + '/reviews/' + reviewId)
       .subscribe( (response) => {
         this.deletedReview.emit(reviewId);
         resolve(true);

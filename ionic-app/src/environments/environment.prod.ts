@@ -1,4 +1,7 @@
 export const environment = {
-  production: true,
-  urlAPI: 'https://bookreview-back.wittysmoke-d4551057.westeurope.azurecontainerapps.io' // urlAPI: 'http://localhost:8080'
+  production: true
+};
+
+export const apiConection = {
+  url: 'https://bookreview-back.ashyhill-ef64db67.westeurope.azurecontainerapps.io'
 };

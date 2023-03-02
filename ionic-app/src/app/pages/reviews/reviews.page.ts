@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, NavController } from '@ionic/angular';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { IonInfiniteScroll, NavController, RefresherCustomEvent } from '@ionic/angular';
 
+import { DataService, Message } from '../../services/data.service';
 import { ReviewService } from '../../services/review.service';
 import { Review } from 'src/app/model/review';
-import {  NavigationExtras } from '@angular/router';
+import { ActivatedRoute, NavigationExtras } from '@angular/router';
+import { Book } from 'src/app/model/book';
 
 @Component({
   selector: 'reviews-home',
@@ -18,11 +20,12 @@ export class ReviewsPage implements OnInit {
   page = 0;
   size = 7;
 
-  reviews: Review[] = [];
+  public reviews: Review[] = [];
   avatarClasses = ['avatar-rojo', 'avatar-verde', 'avatar-azul-claro', 'avatar-azul-oscuro', 'avatar-violeta', 
                    'avatar-amarillo', 'avatar-rosa', 'avatar-naranja', 'avatar-turquesa', 'avatar-verde-limon'];
 
-  constructor(private reviewsService: ReviewService,
+  constructor(private data: DataService,
+              private reviewsService: ReviewService,
               private navCtrl: NavController) {}
   
 
@@ -95,9 +98,28 @@ export class ReviewsPage implements OnInit {
     this.navCtrl.navigateForward('review-edition', navigationExtras);
   }
 
+  viewBook(review: Review): void {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        book: review.book,
+        reviews: this.reviews
+      }
+    };
+    this.navCtrl.navigateForward('book-edition', navigationExtras);
+  }
+
   getAvatarClass(index: number): string {
    // Obtiene las clases utilizadas en el fondo del avatar del array avatarClasses. Al llegar a 10 vuelve a empezar en 0
    const i = index >= 10 ? index % 10 : index;
    return this.avatarClasses[i];
+  }
+
+  viewBooks(): void {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        reviews: this.reviews
+      }
+    };
+    this.navCtrl.navigateForward('books', navigationExtras);
   }
 }
