@@ -7,7 +7,7 @@ export const environment = {
 };
 
 export const apiConection = {
-  url: 'https://bookreview-api.ashyhill-ef64db67.westeurope.azurecontainerapps.io'
+  url: 'https://bookreview-back.ashyhill-ef64db67.westeurope.azurecontainerapps.io'
 };
 
 /*
