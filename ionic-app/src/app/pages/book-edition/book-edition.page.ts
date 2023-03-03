@@ -164,4 +164,12 @@ export class BookEditionPage implements OnInit {
     await toast.present();
   }
 
+  isbnValido(): boolean {
+    const isbnRegex = /^([0-9]{3})-([0-9]{10})$/;
+    if (this.book.isbn) {
+      return isbnRegex.test(this.book.isbn);
+    }
+    return false;
+  }
+
 }
