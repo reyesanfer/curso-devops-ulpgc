@@ -13,7 +13,7 @@
   <form (ngSubmit) = "saveChanges()">
     <ion-item>
       <ion-label position="floating">Libro</ion-label>
-      <ion-select multiple="false" placeholder="Selecciona un libro" [(ngModel)]="bookId" name="bookId">
+      <ion-select multiple="false" placeholder="Selecciona un libro" [(ngModel)]="bookId" name="bookId" (ionChange)="bookSelected($event)">
         <ion-select-option *ngFor="let book of books" [value]="book.id">{{book.name}}</ion-select-option>
       </ion-select>
       <ion-buttons slot="end">
@@ -54,13 +54,17 @@
                   [(ngModel)]="review.description"></ion-textarea>
     </ion-item>
 
+    <ion-item *ngIf="camposRellenos()">
+      <ion-label color="danger">Se deben rellenar todos los campos</ion-label>
+    </ion-item>
+
     <ion-fab *ngIf="!!review.id" slot="fixed" vertical="bottom" horizontal="start">
       <ion-fab-button color="danger" (click)="presentDeleteAlert()">
         <ion-icon name="trash-outline"></ion-icon>
       </ion-fab-button>
     </ion-fab>
     <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-      <ion-button color="tertiary" (click)="saveChanges()">
+      <ion-button [disabled]="camposRellenos()" color="tertiary" (click)="saveChanges()">
         GUARDAR
       </ion-button>
     </ion-fab>

@@ -172,4 +172,15 @@ export class BookEditionPage implements OnInit {
     return false;
   }
 
+  camposRellenos(): boolean {
+    if (this.book.author && this.book.cover && this.book.isbn && this.book.name) {
+      if (this.isbnValido()) {
+        return false;
+      }
+      return true;
+    } else {
+      return true;
+    }
+  }
+
 }

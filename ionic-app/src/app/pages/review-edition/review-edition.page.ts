@@ -19,7 +19,7 @@ export class ReviewEditionPage implements OnInit {
   
   created = (new Date()).toISOString();
   bookId?: number;
-
+  bookIsSelected: boolean = false;
   books: Book[] =  [];
 
 
@@ -143,6 +143,23 @@ export class ReviewEditionPage implements OnInit {
       color: 'light'
     });
     toast.present();
+  }
+
+  bookSelected(event: Event) {
+    if (event.target !== null) {
+      console.log(event.target);
+      this.bookIsSelected = true;
+    } else {
+      this.bookIsSelected = false;
+    }
+  }
+
+  camposRellenos(): boolean {
+    if (this.bookIsSelected && this.review.author && this.review.description) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }
