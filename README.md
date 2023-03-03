@@ -1,11 +1,11 @@
-# Repositorio privado
-https://github.com/reyesanfer/bookReviewApp
+# Enlace de la app publicada en azure (frontend en ionic)
+https://happy-sky-07f9abc03.2.azurestaticapps.net
 
 # Enlace a la API publicada en azure
 https://bookreview-back.ashyhill-ef64db67.westeurope.azurecontainerapps.io/openapi/swagger-ui/index.html
 
-# Enlace de la app publicada en azure (frontend en ionic)
-https://happy-sky-07f9abc03.2.azurestaticapps.net
+# Repositorio personal
+https://github.com/reyesanfer/bookReviewApp
 
 # curso-devops-ulpgc
 
