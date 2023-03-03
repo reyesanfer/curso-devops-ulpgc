@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@CrossOrigin(origins = "https://happy-sky-07f9abc03.2.azurestaticapps.net", maxAge = 3600)
 @Tag(description = "Book reviews.", name = "Review Resource")
 @RestController
 @RequestMapping("reviews")
