@@ -1,6 +1,16 @@
 .toast-center {
-    --background: black;
-    color: white;
-    top: 50%;
-    left: 50%;
-  }
+  --background: black;
+  color: white;
+  top: 50%;
+  left: 50%;
+}
+
+.squared-avatar {
+  width: 100px;
+  height: 43px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: auto;
+}

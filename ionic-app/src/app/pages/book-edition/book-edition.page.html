@@ -27,12 +27,12 @@
                   [autoGrow]="true"
                   [(ngModel)]="book.isbn"></ion-textarea>
     </ion-item>
-    <ion-item>
+    <ion-item class="add-margin">
         <ion-label position="floating">url de la imagen</ion-label>
         <ion-textarea name="url de la imagen"
                 [(ngModel)]="book.cover"></ion-textarea>
         <ion-avatar>
-          <img *ngIf="!!book.cover" [src]="book.cover"/>
+          <img class="squared-avatar" *ngIf="!!book.cover" [src]="book.cover"/>
           <ion-icon *ngIf="!book.cover" name="image" size="large"></ion-icon>
         </ion-avatar>
     </ion-item>
