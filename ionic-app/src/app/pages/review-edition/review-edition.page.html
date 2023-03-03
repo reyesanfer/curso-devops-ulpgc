@@ -17,10 +17,10 @@
         <ion-select-option *ngFor="let book of books" [value]="book.id">{{book.name}}</ion-select-option>
       </ion-select>
       <ion-buttons slot="end">
-        <ion-fab-button (click)="saveChanges()" size="small">
+        <ion-fab-button color="tertiary" (click)="saveChanges()" size="small">
           <ion-icon name="create-outline"></ion-icon>
         </ion-fab-button>
-        <ion-fab-button (click)="saveChanges()" size="small">
+        <ion-fab-button color="tertiary" (click)="saveChanges()" size="small">
           <ion-icon name="add"></ion-icon>
         </ion-fab-button>
       </ion-buttons>
@@ -60,7 +60,7 @@
       </ion-fab-button>
     </ion-fab>
     <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-      <ion-button (click)="saveChanges()">
+      <ion-button color="tertiary" (click)="saveChanges()">
         GUARDAR
       </ion-button>
     </ion-fab>
