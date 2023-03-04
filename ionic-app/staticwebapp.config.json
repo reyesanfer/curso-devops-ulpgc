@@ -1,0 +1,13 @@
+{
+    "navigationFallback": {
+        "rewrite": "index.html",
+        "exclude": [
+            "/*.scss",
+            "/app/*/*.scss",
+            "/app/*/*/*.scss",
+            "/assets/*",
+            "/environments/*",
+            "/theme/*"
+        ]
+    }
+}
