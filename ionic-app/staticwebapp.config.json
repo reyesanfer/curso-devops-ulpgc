@@ -3,8 +3,11 @@
         "rewrite": "index.html",
         "exclude": [
             "/*.scss",
-            "/app/*/*.scss",
-            "/app/*/*/*.scss",
+            "/app/message/*.scss",
+            "/app/pages/book-edition/*.scss",
+            "/app/pages/books/*.scss",
+            "/app/pages/review-edition/*.scss",
+            "/app/pages/reviews/*.scss",
             "/assets/*",
             "/environments/*",
             "/theme/*"
