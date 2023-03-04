@@ -19,7 +19,7 @@ export class BooksPage implements OnInit {
   infiniteScroll?: IonInfiniteScroll;
 
   page = 0;
-  size = 7;
+  size = 30;
 
   books: Book[] = [];
   reviewsList: Review[] = [];
