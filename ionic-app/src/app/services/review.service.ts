@@ -22,7 +22,7 @@ export class ReviewService {
     params = params.append('page', page);
     params = params.append('size', size);
     params = params.append('sortDir', 'desc');
-    params = params.append('sort', 'id');
+    params = params.append('sort', 'created');
 
     return this.http.get<Review[]>(apiConection.url + '/reviews', { params });
   }

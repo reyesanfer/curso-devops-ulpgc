@@ -20,7 +20,7 @@ export class BookService {
     params = params.append('page', 0);
     params = params.append('size', !!size ? size: 50);
     params = params.append('sortDir', 'asc');
-    params = params.append('sort', 'id');
+    params = params.append('sort', 'name');
     return this.http.get<Book[]>( apiConection.url + '/books', { params });
   }
 
